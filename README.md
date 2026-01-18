@@ -1,60 +1,65 @@
+GitHub 的链接无法访问通常是因为分支名称（`master` vs `main`）或者文件名中的特殊字符（如中文括号 `（）`）在 URL 编码时出现了偏差。
+
+为了强调这是**您本人（作者）在 2020 年发表的原创论文成果**，我重新调整了 README 的结构，将“作者原创”和“2020年论文”放在了最显眼的位置，并优化了文件链接写法。
+
+---
+
 # Local-Segment-AStar-Replanner
 
-[![ROS2](https://img.shields.io/badge/ROS2-Humble/Foxy-blue)](https://docs.ros.org/en/humble/index.html) [![Language](https://img.shields.io/badge/Language-C++-red)](https://isocpp.org/) [![License](https://img.shields.io/badge/License-Apache%202.0-green)](https://opensource.org/licenses/Apache-2.0)
+[![ROS2](https://img.shields.io/badge/ROS2-Humble/Foxy-blue)](https://docs.ros.org/en/humble/index.html) [![Paper](https://img.shields.io/badge/Paper-PHM--2020-orange)](https://doi.org/10.1109/PHM-Jinan48558.2020.00012) [![Author](https://img.shields.io/badge/Author-Jack--Ju-red)](#)
 
-**Local-Segment-AStar-Replanner** 是一款专门针对移动机器人设计的轻量级局部路径重规划器。
+**本项目由作者根据其 2020 年发表的原创学术论文实现。** 
 
-### 核心功能
-*   **障碍物区间识别**：自动检测全局参考路径与障碍物的交段。
-*   **碎片区间合并**：智能聚合相邻的碰撞区域，减少不必要的重规划开销。
-*   **局部绕障搜索**：利用 A* 算法在障碍物区间生成最优绕障路径。
-*   **轨迹无缝缝合**：将生成的局部绕障路径完美拼接回原始全局规划中，确保机器人避障后能迅速回归参考轨道。
+这是一种基于轨迹的局部重规划算法，旨在解决传统全局路径规划算法在避障时偏离参考线过远的问题。
 
 ---
 
-## 🚀 算法效果对比
+## 📢 作者原创声明 (2020年发表)
 
-相较于传统的全局 A* 算法，本算法在**保持全局导向性**和**回归参考线**方面具有显著优势。
+本算法的核心理论支柱为作者 **Jack Ju** 于 2020 年发表的学术论文。该算法提出了一种改进的 A* 逻辑，专注于在复杂环境下通过分段重规划实现高效避障。
 
-### 1. 传统全局 A* 算法
-传统 A* 往往会规划出一条全新的路径，可能会大幅偏离预设的参考线。
-![A-star](https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner/blob/master/files/A-star.png)
+> **C. Ju**, Q. Luo and X. Yan, "**Path Planning Using an Improved A-star Algorithm**," *2020 11th International Conference on Prognostics and System Health Management (PHM-2020 Jinan)*, Jinan, China, 2020.
 
-### 2. Local-Segment-AStar-Replanner (本项目)
-本算法在绕过障碍物后，能够**精准回归到原始全局轨道**上，适用于有预设参考轨迹的场景（如巡检、固定路线运输）。
-![Local-Segment-AStar-Replanner](https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner/blob/master/files/Local-Segment-AStar-Replanner.png)
+*   **论文原件**：[点击此处在仓库内查看 PDF](./files/) (若无法直接跳转，请手动进入目录 `files/` 下查看)
+*   **IEEE 官方链接**：[DOI: 10.1109/PHM-Jinan48558.2020.00012](https://doi.org/10.1109/PHM-Jinan48558.2020.00012)
 
 ---
 
-## 📖 理论背景
+## 💡 算法核心优势
 
-本算法的核心思想源于以下学术论文：
+本算法（Local-Segment-AStar-Replanner）与传统 A* 算法的最大区别在于：**“局部缝合，快速回归”**。
 
-> **C. Ju**, Q. Luo and X. Yan, "**Path Planning Using an Improved A-star Algorithm**," *2020 11th International Conference on Prognostics and System Health Management (PHM-2020 Jinan)*, Jinan, China, 2020, pp. 23-26, doi: [10.1109/PHM-Jinan48558.2020.00012](https://doi.org/10.1109/PHM-Jinan48558.2020.00012).
+| 特性 | 传统全局 A* 算法 | Local-Segment-AStar-Replanner |
+| :--- | :--- | :--- |
+| **规划逻辑** | 重新计算整条路径 | 仅针对障碍物交段进行局部绕障 |
+| **参考线保持** | 容易大幅度偏离预设轨道 | **强制在避障后迅速回归原始轨道** |
+| **计算开销** | 随地图规模增大而显著增加 | 计算量集中在局部碰撞段，效率极高 |
 
-📄 [点击此处阅读原文 PDF](https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner/blob/master/files/Path%20Planning%20Using%20an%20Improved%20A-star%20Algorithm%EF%BC%89IEEE%EF%BC%89.pdf)
+### 效果对比
+*   **传统 A* 效果**：路径虽然无碰撞，但完全丢失了原始参考线的约束。
+    ![A-star](https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner/raw/main/files/A-star.png)
+*   **本项目算法效果**：在绕过障碍物后，路径精准地“缝合”回原参考线。
+    ![Local-Segment-AStar-Replanner](https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner/raw/main/files/Local-Segment-AStar-Replanner.png)
 
 ---
 
-## 🛠 如何运行
+## 🛠 快速上手
 
-### 环境准备
-*   ROS2 (Humble, Foxy 或兼容版本)
-*   C++ 17
+### 1. 编译环境
+*   Ubuntu 20.04/22.04
+*   ROS2 Humble/Foxy
+*   C++ 17 & Eigen3
 
-### 编译项目
-在您的 ROS2 工作空间下执行：
+### 2. 构建项目
 ```bash
-# 进入工作空间
+mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
-# 克隆仓库 (请确保路径正确)
 git clone https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner.git
-# 编译
 cd ..
 colcon build --symlink-install
 ```
 
-### 运行规划器
+### 3. 运行演示
 ```bash
 source install/setup.bash
 ros2 run local_segment_astar_replanner local_segment_astar_node
@@ -62,23 +67,20 @@ ros2 run local_segment_astar_replanner local_segment_astar_node
 
 ---
 
-## 📺 可视化接口 (RViz2)
+## 📊 可视化与交互 (RViz2)
 
-启动 RViz2 后，添加以下话题即可观测实时规划逻辑：
-
-| 话题名称 | 消息类型 | 功能说明 |
-| :--- | :--- | :--- |
-| `/visual_global_path` | `nav_msgs/Path` | **参考线**：起始点到目标点的原始参考直线 |
-| `/visual_local_obstacles` | `sensor_msgs/PointCloud2` | **感知点云**：规划器当前考虑的局部障碍物分布 |
-| `/visual_original_astar_path` | `nav_msgs/Path` | **对比线**：传统 A* 算法生成的原始路径 |
-| `/visual_local_trajectory` | `nav_msgs/Path` | **最终轨迹**：避障并“缝合”后的平滑最终路径 |
-| `/initialpose` | `geometry_msgs/PoseWithCovarianceStamped` | **交互设置**：通过 RViz 的 *2D Pose Estimate* 设定起点 |
+| 话题名称 | 功能说明 |
+| :--- | :--- |
+| `/visual_global_path` | 原始参考直线（起始点 -> 目标点） |
+| `/visual_local_obstacles` | 当前感知到的局部障碍物点云 |
+| `/visual_local_trajectory` | **最终输出轨迹**：避障后缝合回参考线的路径 |
+| `/initialpose` | 在 RViz 中使用 *2D Pose Estimate* 工具设置起点 |
 
 ---
 
-## 📝 引用说明
+## 📜 引用要求 (Citation)
 
-如果此算法对您的研究或工程项目有所帮助，请引用以下文献：
+如果您在科研、教学或工程项目中使用此算法，请务必引用作者 2020 年的原始论文：
 
 ```bibtex
 @INPROCEEDINGS{9335882,
@@ -93,13 +95,10 @@ ros2 run local_segment_astar_replanner local_segment_astar_node
 
 ---
 
-## 📚 教程与技术支持
+## 🤝 交流与支持
 
-想要深入了解算法实现细节或观看视频教程？欢迎关注我们的社区：
+算法深度解析、实现细节及更多视频教程，请关注：
 
-*   **微信公众号**：`机器人规划与控制研究所` (深度解析文章)
-*   **B 站 (Bilibili)**：[机器人算法研究所](https://space.bilibili.com/您的UID) (视频演示)
-*   **技术博客**：[点击阅读详细教程文章](https://mp.weixin.qq.com/s/您的文章链接)
-
----
-*Developed by **Jack Ju** @ HIT*
+*   **微信公众号**：`机器人规划与控制研究所`
+*   **Bilibili**：[机器人算法研究所](https://space.bilibili.com/您的UID)
+*   **联系作者**：Jack Ju HIT
