@@ -1,9 +1,3 @@
-GitHub 的链接无法访问通常是因为分支名称（`master` vs `main`）或者文件名中的特殊字符（如中文括号 `（）`）在 URL 编码时出现了偏差。
-
-为了强调这是**您本人（作者）在 2020 年发表的原创论文成果**，我重新调整了 README 的结构，将“作者原创”和“2020年论文”放在了最显眼的位置，并优化了文件链接写法。
-
----
-
 # Local-Segment-AStar-Replanner
 
 [![ROS2](https://img.shields.io/badge/ROS2-Humble/Foxy-blue)](https://docs.ros.org/en/humble/index.html) [![Paper](https://img.shields.io/badge/Paper-PHM--2020-orange)](https://doi.org/10.1109/PHM-Jinan48558.2020.00012) [![Author](https://img.shields.io/badge/Author-Jack--Ju-red)](#)
@@ -14,7 +8,7 @@ GitHub 的链接无法访问通常是因为分支名称（`master` vs `main`）�
 
 ---
 
-## 📢 作者原创声明 (2020年发表)
+## 📢 理论背景
 
 本算法的核心理论支柱为作者 **Jack Ju** 于 2020 年发表的学术论文。该算法提出了一种改进的 A* 逻辑，专注于在复杂环境下通过分段重规划实现高效避障。
 
