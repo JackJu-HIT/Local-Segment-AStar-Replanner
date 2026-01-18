@@ -14,7 +14,7 @@
 
 > **C. Ju**, Q. Luo and X. Yan, "**Path Planning Using an Improved A-star Algorithm**," *2020 11th International Conference on Prognostics and System Health Management (PHM-2020 Jinan)*, Jinan, China, 2020.
 
-*   **论文原件**：[点击此处在仓库内查看 PDF](https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner/blob/master/files/Path%20Planning%20Using%20an%20Improved%20A-star%20Algorithm.pdf) (若无法直接跳转，请手动进入目录 `files/` 下查看)
+*   **论文原件**：[点击此处在仓库内查看 PDF](https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner/blob/master/files/Path%20Planning%20Using%20an%20Improved%20A-star%20Algorithm.pdf) 
 *   **IEEE 官方链接**：[DOI: 10.1109/PHM-Jinan48558.2020.00012](https://doi.org/10.1109/PHM-Jinan48558.2020.00012)
 
 ---
