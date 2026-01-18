@@ -78,7 +78,7 @@ ros2 run local_segment_astar_replanner local_segment_astar_node
 
 ```bibtex
 @INPROCEEDINGS{9335882,
-  author={Ju, Chunyu and Luo, Qingxian and Yan, Xuefeng},
+  author={Ju, Chunyu and Luo, Qinghua and Yan, Xiaozhen},
   booktitle={2020 11th International Conference on Prognostics and System Health Management (PHM-2020 Jinan)}, 
   title={Path Planning Using an Improved A-star Algorithm}, 
   year={2020},
