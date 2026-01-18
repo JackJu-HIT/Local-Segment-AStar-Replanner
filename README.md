@@ -56,7 +56,7 @@ colcon build --symlink-install
 ### 3. 运行演示
 ```bash
 source install/setup.bash
-ros2 run local_segment_astar_replanner local_segment_astar_node
+ros2 run local_segment_astar_replanner local_segment_astar_replanner
 ```
 
 ---
@@ -69,6 +69,7 @@ ros2 run local_segment_astar_replanner local_segment_astar_node
 | `/visual_local_obstacles` | 当前感知到的局部障碍物点云 |
 | `/visual_local_trajectory` | **最终输出轨迹**：避障后缝合回参考线的路径 |
 | `/initialpose` | 在 RViz 中使用 *2D Pose Estimate* 工具设置起点 |
+| `/visual_original_astar_path` |  原始路线(目前仅考虑起点和终点的直线)
 
 ---
 
