@@ -92,8 +92,14 @@ ros2 run local_segment_astar_replanner local_segment_astar_replanner
 
 ## 🤝 交流与支持
 
-算法深度解析、实现细节及更多视频教程，请关注：
+如果您对算法的实现细节感兴趣，或者在部署过程中遇到问题，欢迎通过以下渠道与我交流：
 
-*   **微信公众号**：`机器人规划与控制研究所`
-*   **Bilibili**：[机器人算法研究所](https://space.bilibili.com/您的UID)
+*   **微信公众号**：[机器人规划与控制研究所](https://mp.weixin.qq.com/s/xjxazkdFrHZYgzjGiUUJAw) （深度解析本项目核心逻辑）
+*   **Bilibili**：[机器人算法研究所]
 *   **联系作者**：Jack Ju HIT
+
+---
+
+### 💡 技术解析文章推荐
+为了帮助您更好地理解本项目，建议阅读以下专题文章：
+*   [【深度解析】Local-Segment-AStar-Replanner：如何实现局部绕障与路径缝合？](https://mp.weixin.qq.com/s/xjxazkdFrHZYgzjGiUUJAw)
