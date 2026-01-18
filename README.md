@@ -102,4 +102,4 @@ ros2 run local_segment_astar_replanner local_segment_astar_replanner
 
 ### 💡 技术解析文章推荐
 为了帮助您更好地理解本项目，建议阅读以下专题文章：
-*   [【深度解析】Local-Segment-AStar-Replanner：如何实现局部绕障与路径缝合？](https://mp.weixin.qq.com/s/xjxazkdFrHZYgzjGiUUJAw)
+*   [【机器人轨迹优化基础】从原理到实现：支持动态膨胀的机器人A*局部路径规划开源算法【Github开源】【ROS2】【C++】](https://mp.weixin.qq.com/s/xjxazkdFrHZYgzjGiUUJAw)
