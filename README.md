@@ -31,9 +31,9 @@
 
 ### 效果对比
 *   **传统 A* 效果**：路径虽然无碰撞，但完全丢失了原始参考线的约束。
-    ![A-star](https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner/raw/main/files/A-star.png)
+    ![A-star](https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner/blob/master/files/A-star.png)
 *   **本项目算法效果**：在绕过障碍物后，路径精准地“缝合”回原参考线。
-    ![Local-Segment-AStar-Replanner](https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner/raw/main/files/Local-Segment-AStar-Replanner.png)
+    ![Local-Segment-AStar-Replanner](https://github.com/JackJu-HIT/Local-Segment-AStar-Replanner/blob/master/files/Local-Segment-AStar-Replanner.png)
 
 ---
 
